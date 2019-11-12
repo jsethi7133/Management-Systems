@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+void bill(float ad,float ch,float ca,float cc,float cd,float rf,float tt,float dep)
+{
+float total;
+cout<<"Number of adults:"<<ad<<"\n";
+cout<<"Number of Children:"<<ch<<"\n";
+cout<<"Cost per adult without desert:"<<"$"<<(ca-cd)<<"\n";
+cout<<"Cost per child without desert:"<<"$"<<(cc-cd)<<"\n";
+cout<<"Cost per desert:"<<"$"<<cd<<"\n";
+cout<<"Room fee:"<<"$"<<rf<<"\n";
+cout<<"Tip and Tax rate:"<<tt<<"\n";
+cout<<"\n";
+cout<<"\n";
+cout<<"Total cost for adult meals:"<<"$"<<ad*(ca-cd)<<"\n";
+cout<<"Total cost for child meals:"<<"$"<<ch*(cc-cd)<<"\n";
+cout<<"Total cost for desert:"<<"$"<<cd*(ad+ch)<<"\n";
+total=(ad*(ca-cd))+(ch*(cc-cd))+(cd*(ad+ch));
+cout<<"Total food cost:"<<"$"<<total<<"\n";
+cout<<"Plus tips and tax:"<<"$"<<total*(tt)<<"\n";
+cout<<"Plus room fee:"<<"$"<<rf<<"\n";
+cout<<"Less deposit:"<<"$"<<dep<<"\n";
+cout<<"\n";
+cout<<"Balance due:"<<"$"<<((total+(total*tt)+rf)-dep)<<"\n";
+}
+int main()
+{
+float ad,ch,ca,cc,cd,rf,tt,dep;
+cout<<"Number of adults to be served:";
+cin>>ad;
+cout<<"Number of children to be served:";
+cin>>ch;
+cout<<"Cost per adult's meal:";
+cin>>ca;
+cout<<"Cost per child's meal:";
+cin>>cc;
+cout<<"Cost for desert:";
+cin>>cd;
+cout<<"Room fee:";
+cin>>rf;
+cout<<"Percentage for tip and tax:";
+cin>>tt;
+cout<<"Deposit to be deducted:";
+cin>>dep;
+cout<<"\n";
+cout<<"\t"<<"Casewell Catering and Convention Service"<<"\n";
+cout<<"\t\t"<<"Final Bill"<<"\n";
+bill(ad,ch,ca,cc,cd,rf,tt,dep);
+return 0;
+}
